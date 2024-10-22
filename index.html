@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <script defer src="./js/main.js"></script>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+
+  <main class="card__grid">
+
+    <div class="card__left-col"></div>
+
+    <div class="card__cards-container flex column">
+      <div class="card__card-front">
+        
+        <img class="card__img" src="./assets/images/bg-card-front.png" alt="">
+        <img class="card__logo" src="./assets/images/card-logo.svg" alt="">
+        <p id="card-img-number" class="card__number">0000 0000 0000 0000</p>
+        <p id="card-img-name" class="card__name"></p>
+        <p class="card__exp-date"><span id="card-img-month">00</span>/<span id="card-img-year">00</span></p>
+        
+      </div>
+      <div class="card__card-back">
+        <img class="card__img" src="./assets/images/bg-card-back.png" alt="">
+        <p id="card-img-cvc" class="card__cvc">000</p>
+      </div>
+    </div>
+
+    <div class="card__form-wrapper">
+
+      <form id="form" class="card__form flex column">
+        <div class="form-group">
+          <label for="cardholder-name">cardholder name</label>
+          <input type="text" id="cardholder-name" placeholder="Enter your full name">
+          <p id="cardholder-name-error" class="error hidden"></p>
+        </div>
+  
+        <div class="form-group">
+            <label for="card-number">card number</label>
+            <input type="text" id="card-number" placeholder="Enter your card number">
+            <p id="card-number-error" class="error hidden"></p>
+        </div>
+  
+        <div class="form-row flex">
+          <div class="form-group">
+              <label>Exp. Date (MM/YY)</label>
+              <div class="form-row__inputs flex">
+                <label for="exp-month" style="display: none;">Month</label>
+                <input type="text" id="exp-month" placeholder="MM">
+                <label for="exp-year" style="display: none;">Year</label>
+                <input type="text" id="exp-year" placeholder="YY">
+              </div>
+              <p id="expiry-date-error" class="error hidden"></p>
+          </div>
+  
+          <div class="form-group">
+              <label for="cvc">CVC</label>
+              <input type="text" id="cvc" placeholder="e.g. 123">
+              <p id="cvc-error" class="error hidden"></p>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Confirm</button>
+  
+      </form>
+
+      <div id="form-success" class="card__form-success flex column hidden">
+        <div>
+          <img src="./assets/images/icon-complete.svg" alt="card details added successfully">
+        </div>
+        <p class="form-success__heading">THANK YOU!</p>
+        <p class="form-success__content">We've added you card details</p>
+        <button id="success-button" class="submit-btn">Continue</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
